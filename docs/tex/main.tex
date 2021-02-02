@@ -1,0 +1,41 @@
+\documentclass[a4paper,12pt,polski]{report}
+
+% obsługa języka polskiego
+\usepackage[utf8x]{inputenc}
+\usepackage[OT4]{fontenc}
+\usepackage{polski}
+
+\usepackage[onehalfspacing]{setspace} % wysokość lini: półtora
+\usepackage[font=small,format=plain,labelfont=bf,up,margin=10pt]{caption} % styl podpisów
+
+\usepackage{natbib}    % bibliografia
+\usepackage{paralist}  % inline lists
+\usepackage{todonotes} % obsługa \todo
+\usepackage{url}       % linki zewnętrzne
+\usepackage{amsmath}   % m.i. macierze
+\usepackage{subfig}
+\usepackage{hyperref}  % klikalne linki
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows} % diagram przepływu
+
+\title{Badanie przekształceń geometrycznych między kadrami tej samej sceny}
+\author{Stanisław Wasiutyński}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\include{chapters/wstep}
+\include{chapters/mser}
+\include{chapters/ismatch}
+\include{chapters/ransac}
+\include{chapters/experiments}
+\include{chapters/summary}
+
+\bibliographystyle{unsrt}
+\bibliography{bibl}
+
+\end{document}

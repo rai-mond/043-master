@@ -1,0 +1,129 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+    <title>MSER Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+
+    <div class="right ribbon-holder">
+      <a href="http://github.com/Stanley/043" class="darkblue ribbon">
+        <span class="text">Fork me on GitHub</span>
+      </a>
+    </div>
+    
+    <h1>Maximally stable extremal regions demo</h1>
+    <p>
+      This is javascript implementation of MSER detector. Problem is divided into two steps. First, we need to find MSERs. We can define size of this regions (minimum and maximum) and stability parameter (brightness delta). Second, we look for local addine frames.
+    </p>
+
+    <div id="steps">
+    <div class="step">
+      <h3>Finding</h3> 
+      <table>     
+        <tr>
+          <td>
+            Algorithm:
+          </td><td>
+            <select name="alg" id="alg">
+              <option value="minus">MSER-</option>
+              <option value="plus">MSER+</option>
+            </select>
+          </td>
+        </tr>     
+        <tr>
+          <td>
+            Delta:
+          </td><td>
+            <input type="text" id="delta" value="10" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Minimum:
+          </td><td>
+            <input type="text" id="min" value="50" />
+          </td>
+        </tr>
+        <tr>
+          <td>            
+            Maximum:
+          </td><td>
+            <input type="text" id="max" value="5000" />
+          </td>
+        </tr>
+        <tr>
+          <td>            
+            Change:
+          </td><td>
+            <select name="set" id="set">
+              <option value="hand">hand</option>
+              <option value="scissors">scissors</option>
+              <option value="drop">drop</option>
+              <option value="test">test</option>
+              <option value="graf">viewpoint</option>
+              <option value="bikes">blur</option>
+              <option value="boat">zoom+rotation</option>
+              <option value="leuven">light</option>
+              <option value="ubc">compression</option>
+              <option value="???">environment</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>            
+            Resolution:
+          </td><td>
+            <select name="res" id="res">
+              <option value="medium">medium</option>
+              <option value="high">high</option>
+            </select>
+          </td>
+        </tr>
+      </table>      
+    </div>
+    
+    <div class="step">
+      <h3>Matching</h3>    
+      <table>
+        <tr>
+          <td>
+            Contour sample
+          </td><td>
+            <input type="text" id="sample" value="3" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Delta
+          </td><td>
+            <input type="text" id="descriptor_delta" value="4" />
+          </td>
+        </tr>    
+        <tr>
+          <td>
+            Max. difference value
+          </td><td>
+            <input type="text" id="threshold" value="0.40" />
+          </td>
+        </tr>    
+      </table>  
+      <input type="button" id="step1" value="Find!" />
+    </div>
+    </div>
+ 
+    <ul id="imgs"></ul>
+    <ul id="desc"></ul>
+
+    <script type="application/javascript" src="javascripts/jquery.min.js"></script>
+    <script type="application/javascript" src="javascripts/jquery-ui-1.8.1.min.js"></script>
+    <script type="application/javascript" src="javascripts/demo.js"></script>    
+    
+    <script type="application/javascript" src="../../lib/array.js"></script>
+    <script type="application/javascript" src="../../lib/mser2.js"></script>
+    <script type="application/javascript" src="../../lib/ISMatch.js"></script>
+    <script type="application/javascript" src="../../lib/Matrix.js"></script>
+    <script type="application/javascript" src="../../lib/Ransac.js"></script>
+  </body>
+</html>
